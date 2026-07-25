@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { AnimatePresence, motion } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -12,19 +13,11 @@ export interface BumpNavbarItem {
 }
 
 export interface BumpNavbarClassNames {
-  /** Wrapper <nav>. Controls width/max-width/positioning. */
+  /** Wrapper <nav>. Controls width, height, and positioning — both are independent (see borderWidth note below). */
   container?: string;
-  /**
-   * The bar's fill + border, applied directly to the SVG <path> as normal
-   * Tailwind utilities — e.g. "fill-primary/60 stroke-border".
-   * No text-color trick needed: fill-* is the background, stroke-* is the border.
-   */
+  /** The bar's fill + border, applied directly to the SVG <path>. e.g. "fill-primary/60 stroke-border". */
   bar?: string;
-  /**
-   * Optional glass layer behind the bar (blur + tint), clipped to the exact
-   * same organic shape (basin included). Use normal background/blur classes,
-   * e.g. "bg-background/50 backdrop-blur-xl". Leave empty to skip the glass effect.
-   */
+  /** Optional glass layer (blur + tint), clipped to the same organic shape. Leave empty to skip. */
   glass?: string;
   /** The floating bubble that sits in the basin. */
   bubble?: string;
@@ -34,6 +27,8 @@ export interface BumpNavbarClassNames {
   link?: string;
   /** Color override applied to the icon rendered inside the bubble. */
   activeIcon?: string;
+  /** The little label that pops up above an icon on hover. */
+  tooltip?: string;
 }
 
 interface BumpNavbarProps {
@@ -44,13 +39,18 @@ interface BumpNavbarProps {
 }
 
 const defaultClassNames: Required<BumpNavbarClassNames> = {
-  container: "w-[92vw] max-w-[420px]",
+  // NOTE: width AND height are both set here — the two are independent,
+  // there is no more aspect-ratio auto-deriving one from the other.
+  // If you override `container`, always include a height (h-*) or the
+  // whole bar collapses to 0px, since every child inside is absolutely positioned.
+  container: "w-[92vw] max-w-[420px] h-[78px]",
   bar: "fill-primary/60 stroke-border",
   glass: "",
   bubble: "bg-secondary shadow-[0_6px_14px_rgba(0,0,0,0.25)]",
   halo: "bg-secondary/30",
   link: "",
   activeIcon: "!text-secondary-foreground",
+  tooltip: "border border-border bg-popover text-popover-foreground",
 };
 
 // ---- Shared coordinate system (viewBox units) — scales with any number of items ----
@@ -146,8 +146,7 @@ export function BumpNavbar({ items, classNames = {}, borderWidth = 1.5 }: BumpNa
   return (
     <nav
       aria-label="Navigation principale"
-      className={cn("relative", cls.container)}
-      style={{ aspectRatio: `${vbW} / ${VB_H}` }}
+      className={cn("relative overflow-visible", cls.container)}
     >
       {/* Optional glass layer: blur + tint, clipped to the exact same shape as the bar */}
       {cls.glass && (
@@ -160,6 +159,7 @@ export function BumpNavbar({ items, classNames = {}, borderWidth = 1.5 }: BumpNa
       {/* Bar: fill = background, stroke = border, both normal Tailwind classes */}
       <svg
         viewBox={`0 0 ${vbW} ${VB_H}`}
+        preserveAspectRatio="none"
         width="100%"
         height="100%"
         style={{ display: "block", overflow: "visible", pointerEvents: "none" }}
@@ -171,6 +171,8 @@ export function BumpNavbar({ items, classNames = {}, borderWidth = 1.5 }: BumpNa
       {/* Real links — sit above the SVG, always receive clicks/hover */}
       {items.map((item, i) => {
         const isPreviewed = i === displayIndex;
+        const isHovered = hoverIndex === i;
+
         return (
           <Link
             key={item.href}
@@ -193,6 +195,22 @@ export function BumpNavbar({ items, classNames = {}, borderWidth = 1.5 }: BumpNa
               zIndex: 4,
             }}
           >
+            <AnimatePresence>
+              {isHovered && (
+                <motion.div
+                  initial={{ opacity: 0, y: 6, x: "-50%" }}
+                  animate={{ opacity: 1, y: 0, x: "-50%" }}
+                  exit={{ opacity: 0, y: 4, x: "-50%" }}
+                  transition={{ duration: 0.15 }}
+                  className={cn(
+                    "absolute -top-9 left-1/2 w-fit whitespace-nowrap rounded-md px-2 py-1 text-xs font-medium shadow-sm",
+                    cls.tooltip
+                  )}
+                >
+                  {item.title}
+                </motion.div>
+              )}
+            </AnimatePresence>
             <span
               className="h-5 w-5"
               style={{ opacity: isPreviewed ? 0 : 1, transition: "opacity 0.2s ease" }}

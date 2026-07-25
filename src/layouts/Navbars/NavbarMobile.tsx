@@ -83,12 +83,14 @@ export function NavbarMobile() {
         items={links}
         classNames={{
           // Corps principal : couleur "primary" du thème, mais translucide
-          bar: "text-primary/60",
+          bar: "fill-primary/60 stroke-border",
           // Bulle : plus opaque pour rester lisible/cliquable
-          bubble: "bg-primary shadow-[0_6px_14px_rgba(0,0,0,0.3)]",
+          bubble: "bg-secondary shadow-[0_6px_14px_rgba(0,0,0,0.25)]",
+          glass: "bg-background/40 backdrop-blur-xl",
           halo: "bg-primary/20",
           activeIcon: "!text-primary-foreground",
         }}
+        borderWidth={1.5}
       />
     </div>
   );
