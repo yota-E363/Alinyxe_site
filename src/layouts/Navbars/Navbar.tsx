@@ -4,8 +4,10 @@ import Link from "next/link"; // Correct import pour Next.js
 import { usePathname } from "next/navigation"; // Pour gérer l'état actif
 import { useEffect, useState } from "react";
 import { useLocale } from "@/lib/i18n/locale-context";
-import { LanguageSwitcher } from "./LanguageSwitcher";
-import { ThemeToggle } from "./ThemeToggle";
+import { 
+  LanguageSwitcher,
+       ThemeToggle,
+} from "@/layouts";
 import { Logo } from "@/components/icons";
 
 export function Navbar() {

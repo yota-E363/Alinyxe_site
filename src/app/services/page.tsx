@@ -1,8 +1,10 @@
 // src/app/services/page.tsx
 
 import type { Metadata } from "next";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import { 
+  Navbar,
+  Footer,
+} from "@/layouts";
 
 export const metadata: Metadata = {
   title: "Alinyxe — services",
