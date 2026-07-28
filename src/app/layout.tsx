@@ -45,8 +45,24 @@ export const metadata: Metadata = {
     siteName: "Alinyxe",
   },
   icons: {
-    icon: [{ url: "next/image", type: "image/svg+xml" }],
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/apple-touch-icon.png",
   },
+  manifest: "/site.webmanifest",
+  generator: "Mohamed Djoudir",
+  openGraph: {
+    title: "Alinyxe - Elevate Your Digital Experience",
+    description:
+      "Transform how you work with our AI-powered platform. Automate workflows, gain insights, and boost productivity.", },
+    images: [
+      {
+        url: "/image.png",
+        width: 1200,
+        height: 630,
+        alt: "Nova - AI-powered platform",
+      },
+      ]
 };
 
 export default function RootLayout({

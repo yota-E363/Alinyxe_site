@@ -184,6 +184,18 @@ export const fr: Dictionary = {
       subtitle:
         'Réservez un appel découverte gratuit. Nous identifierons vos meilleures opportunités d’automatisation.',
     },
+      keyFeatures: {
+  eyebrow: 'FONCTIONNALITÉS',
+  title: 'Aperçu des fonctionnalités clés',
+  subtitle: 'Découvrez les fonctionnalités complètes qui distinguent Arise en matière d\'excellence en conception web.',
+  items: [
+    { title: 'Notifications intelligentes', description: 'Recevez des alertes en temps réel sur les mises à jour qui comptent le plus pour vous.' },
+    { title: 'Collaboration facilitée', description: 'Une solution simplifiée pour un travail d\'équipe fluide et productif.' },
+    { title: 'Stimulez votre croissance', description: 'Donnez à votre entreprise les moyens d\'agir grâce à des insights et analyses basés sur les données.' },
+    { title: 'Indicateurs de performance', description: 'Suivez votre réussite grâce à des analyses et insights complets.' },
+    { title: 'Tableau de bord analytique', description: 'Gardez une longueur d\'avance avec une visualisation de données et des rapports en temps réel.' },
+  ],
+},
   },
   services: {
     hero: {
@@ -411,4 +423,5 @@ export const fr: Dictionary = {
       langTab: 'Langue du contenu',
     },
   },
+
 }

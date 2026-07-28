@@ -182,6 +182,34 @@ export const en: Dictionary = {
       subtitle:
         'Book a free discovery call. We will identify your best automation opportunities.',
     },
+    keyFeatures: {
+      eyebrow: 'FEATURES',
+      title: 'Key Features Overview',
+      subtitle:
+        'Explore the comprehensive features that set Arise apart in web design excellence.',
+      items: [
+        {
+          title: 'Smart Notifications',
+          description: 'Get real-time alerts for the updates that matter to you most.',
+        },
+        {
+          title: 'Easy Collaborations',
+          description: 'Streamlined solution for seamless and productive teamwork.',
+        },
+        {
+          title: 'Fuel Your Growth',
+          description: 'Empower your business with data-driven insights and analytics.',
+        },
+        {
+          title: 'Performance Metrics',
+          description: 'Track your success with comprehensive analytics and insights.',
+        },
+        {
+          title: 'Analytics Dashboard',
+          description: 'Stay ahead with real-time data visualization and reporting.',
+        },
+      ],
+    },
   },
   services: {
     hero: {
