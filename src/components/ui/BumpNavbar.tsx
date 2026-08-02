@@ -15,7 +15,7 @@ export interface BumpNavbarItem {
 export interface BumpNavbarClassNames {
   /** Wrapper <nav>. Controls width, height, and positioning — both are independent (see borderWidth note below). */
   container?: string;
-  /** The bar's fill + border, applied directly to the SVG <path>. e.g. "fill-primary/60 stroke-border". */
+  /** The bar's fill, applied directly to the SVG <path>. e.g. "fill-card". The border color is fixed to var(--muted-foreground) (same token as the tab icons) via inline style, so it always matches regardless of Tailwind class generation. */
   bar?: string;
   /** Optional glass layer (blur + tint), clipped to the same organic shape. Leave empty to skip. */
   glass?: string;
@@ -34,7 +34,7 @@ export interface BumpNavbarClassNames {
 interface BumpNavbarProps {
   items: BumpNavbarItem[];
   classNames?: BumpNavbarClassNames;
-  /** Width of the bar's border, in viewBox units (not px). Default 1.5. */
+  /** Width of the bar's border, in viewBox units (not px). Default 3. */
   borderWidth?: number;
 }
 
@@ -43,13 +43,13 @@ const defaultClassNames: Required<BumpNavbarClassNames> = {
   // there is no more aspect-ratio auto-deriving one from the other.
   // If you override `container`, always include a height (h-*) or the
   // whole bar collapses to 0px, since every child inside is absolutely positioned.
-  container: "w-[92vw] max-w-[420px] h-[78px]",
-  bar: "fill-primary/60 stroke-border",
-  glass: "",
-  bubble: "bg-secondary shadow-[0_6px_14px_rgba(0,0,0,0.25)]",
-  halo: "bg-secondary/30",
+  container: "w-[94vw] max-w-[460px] h-[92px]",
+  bar: "fill-card",
+  glass: "bg-background/50 backdrop-blur-xl",
+  bubble: "bg-primary shadow-lg",
+  halo: "bg-primary/25",
   link: "",
-  activeIcon: "!text-secondary-foreground",
+  activeIcon: "!text-primary-foreground",
   tooltip: "border border-border bg-popover text-popover-foreground",
 };
 
@@ -98,7 +98,7 @@ function getActiveIndex(items: BumpNavbarItem[], pathname: string | null) {
 
 let lastCx: number | null = null;
 
-export function BumpNavbar({ items, classNames = {}, borderWidth = 1.5 }: BumpNavbarProps) {
+export function BumpNavbar({ items, classNames = {}, borderWidth = 3 }: BumpNavbarProps) {
   const cls = { ...defaultClassNames, ...classNames };
   const pathname = usePathname();
   const activeIndex = getActiveIndex(items, pathname);
@@ -165,7 +165,13 @@ export function BumpNavbar({ items, classNames = {}, borderWidth = 1.5 }: BumpNa
         style={{ display: "block", overflow: "visible", pointerEvents: "none" }}
         className="absolute inset-0"
       >
-        <path d={d} className={cls.bar} strokeWidth={borderWidth} />
+        <path
+          d={d}
+          className={cls.bar}
+          strokeWidth={borderWidth}
+          strokeLinejoin="round"
+          style={{ stroke: "var(--muted-foreground)" }}
+        />
       </svg>
 
       {/* Real links — sit above the SVG, always receive clicks/hover */}
@@ -203,9 +209,12 @@ export function BumpNavbar({ items, classNames = {}, borderWidth = 1.5 }: BumpNa
                   exit={{ opacity: 0, y: 4, x: "-50%" }}
                   transition={{ duration: 0.15 }}
                   className={cn(
-                    "absolute -top-9 left-1/2 w-fit whitespace-nowrap rounded-md px-2 py-1 text-xs font-medium shadow-sm",
-                    cls.tooltip
-                  )}
+                 "absolute left-1/2 w-fit whitespace-nowrap rounded-md px-2 py-1 text-xs font-medium shadow-sm",
+                cls.tooltip
+                )}
+                style={{
+                top: "-175%",
+                }}
                 >
                   {item.title}
                 </motion.div>

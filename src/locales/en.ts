@@ -266,6 +266,112 @@ export const en: Dictionary = {
         },
       ],
     },
+    features: {
+      eyebrow: 'Features',
+      title: 'AI-Driven Features',
+      subtitle: 'Unlock the full potential of your data with advanced AI solutions',
+      workflow: {
+        title: 'AI Workflow Automation',
+        description:
+          'Automate repetitive and time-consuming tasks with our AI-powered workflow automation',
+        steps: ['Input Data', 'AI Automation', 'Analyze & Optimize'],
+      },
+      nlp: {
+        title: 'Natural Language Processing (NLP) Engine',
+        description:
+          'Automate repetitive and time-consuming tasks with our AI-powered workflow automation tools. Increase productivity.',
+      },
+      predictive: {
+        title: 'Predictive Analytics',
+        description:
+          'Automate repetitive and time-consuming tasks with our AI-powered workflow automation',
+      },
+      visualization: {
+        title: 'Smart Data Visualization',
+        description:
+          'Automate repetitive and time-consuming tasks with our AI-powered workflow automation',
+        metrics: ['Process', 'Optimization', 'Data Analysis'],
+      },
+      decision: {
+        title: 'AI-Powered Decision-Making',
+        description:
+          'This feature processes vast amounts of data in real-time, identifying patterns, predicting',
+      },
+      cta: 'See All Features',
+    },
+    workSteps: {
+      eyebrow: 'How it works',
+      title: 'How we bring your project to life',
+      subtitle:
+        'A clear, three-step process from our first conversation to measurable results.',
+      steps: [
+        {
+          title: 'Discovery call',
+          description:
+            'We talk through your goals and processes to spot where AI can create value fastest.',
+        },
+        {
+          title: 'Tailored proposal',
+          description:
+            'We scope a solution around your priorities and budget, with clear milestones and deliverables.',
+        },
+        {
+          title: 'Build & support',
+          description:
+            'We build, deploy, and stay close after launch, refining the solution as your needs evolve.',
+        },
+      ],
+    },
+    pipeline: {
+      eyebrow: 'Under the hood',
+      title: 'How our AI pipeline works',
+      subtitle:
+        'From raw data to continuous optimization, here is what happens once you plug Alinyxe into your stack.',
+      steps: [
+        {
+          title: 'Connect your data',
+          description:
+            'We plug into your CRM, ERP, spreadsheets or internal databases in minutes, with no heavy setup required on your side.',
+        },
+        {
+          title: 'AI analysis',
+          description:
+            'Our models process and cross-reference your data in real time, surfacing the patterns and opportunities worth acting on.',
+        },
+        {
+          title: 'Continuous optimization',
+          description:
+            'Every result feeds back into the system, so accuracy and recommendations keep improving the longer you use it.',
+        },
+      ],
+    },
+    faq: {
+      eyebrow: 'FAQ',
+      title: 'Questions about our services',
+      subtitle: 'Everything you need to know before starting a project with us.',
+      items: [
+        {
+          question: 'Which AI services do you offer?',
+          answer:
+            'We cover AI consulting, process automation, chatbots & AI agents, and custom integrations, tailored to your business needs.',
+        },
+        {
+          question: 'How is a service engagement structured?',
+          answer:
+            'We start with an audit, define a roadmap, then deliver in short iterative cycles so you see value early.',
+        },
+        {
+          question: 'Can you integrate with our existing tools?',
+          answer:
+            'Yes. Our solutions connect to your CRM, ERP and internal APIs, and we design integrations around your existing stack.',
+        },
+        {
+          question: 'What kind of support do you provide after launch?',
+          answer:
+            'We offer ongoing monitoring, optimization and support plans to keep your AI systems accurate and reliable over time.',
+        },
+      ],
+    },
   },
   about: {
     hero: {
@@ -311,6 +417,76 @@ export const en: Dictionary = {
             'We work alongside your teams, not instead of them. Your autonomy is our goal.',
         },
       ],
+    },
+    offerings: {
+      categories: {
+        eyebrow: 'What we do',
+        title: 'One partner, every AI capability you need',
+        subtitle:
+          'From the first workshop to day-to-day operations, our offering covers the full lifecycle of an AI project.',
+        items: [
+          {
+            title: 'AI strategy & consulting',
+            description:
+              'We turn scattered ideas into a prioritized, costed roadmap so every AI initiative has a clear business case.',
+            features: ['Opportunity audit', 'Prioritized roadmap', 'ROI modeling'],
+          },
+          {
+            title: 'Automation & workflows',
+            description:
+              'We rebuild repetitive processes as automated workflows that run reliably in the background.',
+            features: ['End-to-end workflows', 'Document processing', 'Monitoring dashboards'],
+          },
+          {
+            title: 'Conversational AI & agents',
+            description:
+              'We design assistants and autonomous agents that handle support, sales and internal requests.',
+            features: ['24/7 multilingual support', 'Task-oriented agents', 'Smart escalation'],
+          },
+          {
+            title: 'Integrations & data engineering',
+            description:
+              'We connect every model to your existing stack so insights reach the tools your teams already use.',
+            features: ['CRM & ERP connectors', 'Custom APIs', 'Security & compliance'],
+          },
+        ],
+      },
+      capabilities: {
+        eyebrow: 'Under the hood',
+        title: 'The capabilities behind every engagement',
+        subtitle:
+          'Whichever service you start with, it is backed by the same technical foundation.',
+        items: [
+          {
+            title: 'Multilingual NLP engines',
+            description: 'Language models tuned to understand and respond in your customers’ language.',
+          },
+          {
+            title: 'Predictive analytics',
+            description: 'Models that anticipate demand, churn and risk before they show up in your numbers.',
+          },
+          {
+            title: 'Real-time dashboards',
+            description: 'Live reporting so your teams see the impact of automation as it happens.',
+          },
+          {
+            title: 'Secure, compliant infrastructure',
+            description: 'Encryption, data minimization and GDPR-ready hosting by default.',
+          },
+        ],
+      },
+      outcomes: {
+        eyebrow: 'What you get',
+        title: 'Results you can measure from day one',
+        subtitle:
+          'Every engagement is built around clear milestones and a measurable return on investment.',
+        stats: [
+          { value: '6-12 weeks', label: 'from kickoff to production' },
+          { value: '24/7', label: 'AI-powered coverage' },
+          { value: '<3 months', label: 'typical payback period' },
+        ],
+        ctaLabel: 'Talk to our team',
+      },
     },
   },
   contact: {

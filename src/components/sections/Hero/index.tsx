@@ -1,14 +1,20 @@
-'use client'
+'use client';
 
 import { ArrowRight } from "@/components/icons";
 import { useLocale } from "@/lib/i18n/locale-context";
-//import { HeroBackground } from "@/components/hero/HeroBackground";
+import { TiltedHatchGrid } from "./components";
 
 export function Hero() {
   const { t } = useLocale();
   return (
-    <section className="relative isolate overflow-hidden">
-     {/* <HeroBackground /> */}
+    <section className="relative isolate overflow-hidden min-h-[92vh] bg-[#0a0b10]">
+      {/* 💡 CORRECTION : Assurez-vous qu'il couvre tout le fond du Hero */}
+      <TiltedHatchGrid 
+        tiltAngle={6} 
+        density={1} 
+        className="absolute inset-0 -z-10" 
+      />
+
       <div className="relative z-10 mx-auto flex min-h-[92vh] max-w-5xl flex-col items-center justify-center px-6 pb-24 pt-40 text-center">
         <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-primary backdrop-blur-sm">
           <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_10px_currentColor]" />
@@ -32,7 +38,6 @@ export function Hero() {
             className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-[0_0_30px_-5px_rgba(99,102,241,0.6)] transition hover:bg-primary/90"
           >
             {t.common.buttons.start}
-
             <ArrowRight
               size={16}
               className="transition-transform group-hover:translate-x-0.5"

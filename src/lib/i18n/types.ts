@@ -28,6 +28,35 @@ export interface FaqItem {
   answer: string
 }
 
+export interface FeaturesSection {
+  eyebrow: string
+  title: string
+  subtitle: string
+  workflow: {
+    title: string
+    description: string
+    steps: string[]
+  }
+  nlp: {
+    title: string
+    description: string
+  }
+  predictive: {
+    title: string
+    description: string
+  }
+  visualization: {
+    title: string
+    description: string
+    metrics: string[]
+  }
+  decision: {
+    title: string
+    description: string
+  }
+  cta: string
+}
+
 export interface ValueItem {
   title: string
   description: string
@@ -124,6 +153,25 @@ export interface Dictionary {
     list: {
       items: ServiceItem[]
     }
+    features: FeaturesSection
+    workSteps: {
+      eyebrow: string
+      title: string
+      subtitle: string
+      steps: StepItem[]
+    }
+    pipeline: {
+      eyebrow: string
+      title: string
+      subtitle: string
+      steps: [StepItem, StepItem, StepItem]
+    }
+    faq: {
+      eyebrow: string
+      title: string
+      subtitle: string
+      items: FaqItem[]
+    }
   }
   about: {
     hero: {
@@ -140,6 +188,27 @@ export interface Dictionary {
       title: string
       subtitle: string
       items: ValueItem[]
+    }
+    offerings: {
+      categories: {
+        eyebrow: string
+        title: string
+        subtitle: string
+        items: ServiceItem[]
+      }
+      capabilities: {
+        eyebrow: string
+        title: string
+        subtitle: string
+        items: ValueItem[]
+      }
+      outcomes: {
+        eyebrow: string
+        title: string
+        subtitle: string
+        stats: [Metric, Metric, Metric]
+        ctaLabel: string
+      }
     }
   }
   contact: {

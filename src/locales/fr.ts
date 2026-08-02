@@ -252,6 +252,112 @@ export const fr: Dictionary = {
         },
       ],
     },
+    features: {
+      eyebrow: 'Fonctionnalités',
+      title: 'Fonctionnalités pilotées par l’IA',
+      subtitle: 'Exploitez tout le potentiel de vos données grâce à des solutions IA avancées',
+      workflow: {
+        title: 'Automatisation des workflows IA',
+        description:
+          'Automatisez les tâches répétitives et chronophages grâce à notre automatisation de workflows par IA',
+        steps: ['Saisie des données', 'Automatisation IA', 'Analyse & optimisation'],
+      },
+      nlp: {
+        title: 'Moteur de traitement du langage naturel (NLP)',
+        description:
+          'Automatisez les tâches répétitives et chronophages grâce à nos outils d’automatisation par IA. Augmentez votre productivité.',
+      },
+      predictive: {
+        title: 'Analyse prédictive',
+        description:
+          'Automatisez les tâches répétitives et chronophages grâce à notre automatisation de workflows par IA',
+      },
+      visualization: {
+        title: 'Visualisation intelligente des données',
+        description:
+          'Automatisez les tâches répétitives et chronophages grâce à notre automatisation de workflows par IA',
+        metrics: ['Processus', 'Optimisation', 'Analyse des données'],
+      },
+      decision: {
+        title: 'Prise de décision assistée par IA',
+        description:
+          'Cette fonctionnalité traite de grands volumes de données en temps réel, identifie des tendances et anticipe',
+      },
+      cta: 'Voir toutes les fonctionnalités',
+    },
+    workSteps: {
+      eyebrow: 'Notre fonctionnement',
+      title: 'Comment nous concrétisons votre projet',
+      subtitle:
+        'Un processus clair en trois étapes, du premier échange jusqu’à des résultats mesurables.',
+      steps: [
+        {
+          title: 'Appel de découverte',
+          description:
+            'Nous échangeons sur vos objectifs et vos processus pour identifier où l’IA créera le plus de valeur, rapidement.',
+        },
+        {
+          title: 'Proposition sur mesure',
+          description:
+            'Nous cadrons une solution adaptée à vos priorités et à votre budget, avec des jalons et livrables clairs.',
+        },
+        {
+          title: 'Réalisation & accompagnement',
+          description:
+            'Nous développons, déployons, et restons présents après le lancement pour faire évoluer la solution avec vos besoins.',
+        },
+      ],
+    },
+    pipeline: {
+      eyebrow: 'Sous le capot',
+      title: 'Comment fonctionne notre pipeline IA',
+      subtitle:
+        'De la donnée brute à l’optimisation continue, voici ce qui se passe une fois Alinyxe branché sur votre stack.',
+      steps: [
+        {
+          title: 'Connexion de vos données',
+          description:
+            'Nous nous connectons à votre CRM, ERP, tableurs ou bases de données internes en quelques minutes, sans configuration lourde de votre côté.',
+        },
+        {
+          title: 'Analyse par l’IA',
+          description:
+            'Nos modèles traitent et croisent vos données en temps réel pour faire ressortir les tendances et opportunités à exploiter.',
+        },
+        {
+          title: 'Optimisation continue',
+          description:
+            'Chaque résultat vient nourrir le système, pour que la précision et les recommandations s’améliorent à mesure que vous l’utilisez.',
+        },
+      ],
+    },
+    faq: {
+      eyebrow: 'FAQ',
+      title: 'Questions sur nos services',
+      subtitle: 'Tout ce qu’il faut savoir avant de démarrer un projet avec nous.',
+      items: [
+        {
+          question: 'Quels services IA proposez-vous ?',
+          answer:
+            'Nous couvrons le conseil en IA, l’automatisation de processus, les chatbots & agents IA, ainsi que les intégrations sur mesure, adaptés à vos besoins.',
+        },
+        {
+          question: 'Comment se déroule une mission ?',
+          answer:
+            'Nous commençons par un audit, définissons une feuille de route, puis livrons par cycles itératifs courts pour créer de la valeur rapidement.',
+        },
+        {
+          question: 'Pouvez-vous vous intégrer à nos outils existants ?',
+          answer:
+            'Oui. Nos solutions se connectent à votre CRM, votre ERP et vos API internes, et nous concevons les intégrations autour de votre stack existante.',
+        },
+        {
+          question: 'Quel support proposez-vous après la mise en production ?',
+          answer:
+            'Nous proposons un suivi continu, de l’optimisation et des plans de support pour garder vos systèmes IA fiables dans la durée.',
+        },
+      ],
+    },
   },
   about: {
     hero: {
@@ -297,6 +403,80 @@ export const fr: Dictionary = {
             'Nous travaillons aux côtés de vos équipes, pas à leur place. Votre autonomie est notre objectif.',
         },
       ],
+    },
+    offerings: {
+      categories: {
+        eyebrow: 'Ce que nous faisons',
+        title: 'Un seul partenaire pour toutes vos briques IA',
+        subtitle:
+          'Du premier atelier jusqu’au fonctionnement quotidien, notre offre couvre l’ensemble du cycle de vie d’un projet IA.',
+        items: [
+          {
+            title: 'Conseil & stratégie IA',
+            description:
+              'Nous transformons des idées éparses en une feuille de route priorisée et chiffrée, avec un cas d’usage business clair.',
+            features: ['Audit des opportunités', 'Feuille de route priorisée', 'Modélisation du ROI'],
+          },
+          {
+            title: 'Automatisation & workflows',
+            description:
+              'Nous transformons vos processus répétitifs en workflows automatisés qui tournent de façon fiable en arrière-plan.',
+            features: ['Workflows de bout en bout', 'Traitement de documents', 'Tableaux de bord de suivi'],
+          },
+          {
+            title: 'IA conversationnelle & agents',
+            description:
+              'Nous concevons des assistants et des agents autonomes qui gèrent le support, les ventes et les demandes internes.',
+            features: ['Support multilingue 24/7', 'Agents orientés tâches', 'Escalade intelligente'],
+          },
+          {
+            title: 'Intégrations & ingénierie des données',
+            description:
+              'Nous connectons chaque modèle à votre écosystème existant pour que les insights arrivent dans les outils déjà utilisés par vos équipes.',
+            features: ['Connecteurs CRM & ERP', 'API personnalisées', 'Sécurité & conformité'],
+          },
+        ],
+      },
+      capabilities: {
+        eyebrow: 'Sous le capot',
+        title: 'Les capacités derrière chaque mission',
+        subtitle:
+          'Quel que soit le service par lequel vous démarrez, il s’appuie sur le même socle technique.',
+        items: [
+          {
+            title: 'Moteurs NLP multilingues',
+            description:
+              'Des modèles de langage ajustés pour comprendre et répondre dans la langue de vos clients.',
+          },
+          {
+            title: 'Analyse prédictive',
+            description:
+              'Des modèles qui anticipent la demande, le churn et les risques avant qu’ils n’apparaissent dans vos chiffres.',
+          },
+          {
+            title: 'Tableaux de bord en temps réel',
+            description:
+              'Un reporting en direct pour que vos équipes voient l’impact de l’automatisation au fil de l’eau.',
+          },
+          {
+            title: 'Infrastructure sécurisée et conforme',
+            description:
+              'Chiffrement, minimisation des données et hébergement conforme au RGPD par défaut.',
+          },
+        ],
+      },
+      outcomes: {
+        eyebrow: 'Ce que vous obtenez',
+        title: 'Des résultats mesurables dès le premier jour',
+        subtitle:
+          'Chaque mission s’articule autour de jalons clairs et d’un retour sur investissement mesurable.',
+        stats: [
+          { value: '6-12 semaines', label: 'du lancement à la mise en production' },
+          { value: '24/7', label: 'couverture propulsée par l’IA' },
+          { value: '<3 mois', label: 'délai de rentabilité type' },
+        ],
+        ctaLabel: 'Échanger avec notre équipe',
+      },
     },
   },
   contact: {
